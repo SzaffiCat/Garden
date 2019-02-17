@@ -15,8 +15,10 @@ ezek jellemzői a következők:
 
 • Kaktusz: Víz esetén a mérete eggyel csökken, tápoldat esetén eggyel nő,
 műtrágya esetén eggyel nő. A túlburjánzás határa 4.
+
 • Virág: Víz esetén a mérete hárommal nő, tápoldat és műtrágya esetén eggyel
 csökken. A túlburjánzás határa 6.
+
 • Bokor: Víz és műtrágya esetén a mérete eggyel nő, tápoldat esetén eggyel
 csökken. A túlburjánzás határa 10.
 
