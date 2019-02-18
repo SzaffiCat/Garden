@@ -3,21 +3,20 @@ package hu.szaffi.app.garden.plant;
 import hu.szaffi.app.garden.Material;
 
 public abstract class Plant {
-    int size;
-    String id;
-    int reactToNone = -1;
+    private int size;
+    private String id;
     int reactToWater;
     int reactToBroth;
     int reactToFertilizer;
     int overSize;
-    int aTrophySize = 0;
 
-    public Plant(int size, String id) {
+    Plant(int size, String id) {
         this.size = size;
         this.id = id;
     }
 
     private int reactToMaterial(Material material) {
+        int reactToNone = -1;
         switch (material) {
             case NONE:
                 return reactToNone;
@@ -32,6 +31,7 @@ public abstract class Plant {
     }
 
     public boolean isAlive() {
+        int aTrophySize = 0;
         return (aTrophySize < size && size <= overSize);
     }
 

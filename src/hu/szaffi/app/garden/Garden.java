@@ -12,8 +12,7 @@ import java.util.stream.Collectors;
 
 public class Garden {
 
-    private List<Plant> plants = new ArrayList<>();
-    private List<Plant> livingPlants;
+    private List<Plant> livingPlants = new ArrayList<>();
 
     public void simulateOneDay() {
         Material material = Material.getRandomMaterial();
@@ -28,21 +27,20 @@ public class Garden {
     }
 
     public void initPlants() {
-        plants.add(new Flower(3, "F105"));
-        plants.add(new Bush(4, "B205"));
-        plants.add(new Cactus(2, "C102"));
-        plants.add(new Cactus(1, "C150"));
-        this.livingPlants = new ArrayList<>(plants);
+        livingPlants.add(new Flower(3, "F105"));
+        livingPlants.add(new Bush(4, "B205"));
+        livingPlants.add(new Cactus(2, "C102"));
+        livingPlants.add(new Cactus(1, "C150"));
     }
 
     public List<Plant> getPlants() {
-        List<Plant> plantList = Collections.unmodifiableList(this.plants);
-        return plantList;
+        return Collections.unmodifiableList(this.livingPlants);
     }
 
     private void updateLivingPlants() {
         for (Plant plant :
                 livingPlants.stream().collect(Collectors.toList())) {
+//                new ArrayList<>(livingPlants)) {
             if (!plant.isAlive()) {
                 livingPlants.remove(plant);
             }
